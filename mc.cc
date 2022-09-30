@@ -12,7 +12,7 @@ double alpha = 0.01;
 
 double f(double x) {
     // ここに体積を求めたい関数
-    return 1;
+    return 0;
 }
 
 bool tof(vec3 p) {
