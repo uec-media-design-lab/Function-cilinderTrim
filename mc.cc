@@ -6,13 +6,13 @@
 
 // 円柱空間からサンプリングし、体積を求める。
 
-int N = 10000;  // サンプル数
+int N = 100000000;  // サンプル数
 
 double alpha = 0.01;
 
 double f(double x) {
     // ここに体積を求めたい関数
-    return abs(x);
+    return 1;
 }
 
 bool tof(vec3 p) {
@@ -26,5 +26,5 @@ int main() {
         count += tof(p)==true ? 1 : 0;
     }
     std::cout << std::fixed << std::setprecision(12);
-    std::cout << "I = " << double(count)/N << '\n';
+    std::cout << "prob = " << double(count)/N << '\n';
 }
