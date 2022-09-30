@@ -1,8 +1,7 @@
 #ifndef VEC3_H
 #define VEC3_H
 
-#include <cmath>
-#include <iostream>
+#include "rand.h"
 
 using std::sqrt;
 
@@ -24,7 +23,9 @@ class vec3 {
                     random_double(min,max),
                     random_double(min,max));
     }
-
+    double length_squared() const {
+        return e[0]*e[0] + e[1]*e[1] + e[2]*e[2];
+    }
     public:
     double e[3];
 };
@@ -35,9 +36,8 @@ vec3 random_in_unit_disk() {
         return p;
     }
 }
-vec3 random_in_unit_cilinder() {
+vec3 random_in_cilinder() {
     vec3 p = random_in_unit_disk();
-    p.z() = random_double();
-    return p;
+    return vec3(p.x(), p.y(), random_double());
 }
 #endif
